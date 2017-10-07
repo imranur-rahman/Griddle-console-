@@ -27,21 +27,14 @@ public class State implements Comparable<State> {
         void calculateHeuristic(State goalState) {
                 int misplacedTiles = 0, verticalDistance = 0;
                 int[][] targetAr = goalState.getAr();
-                /*for(int i = 1; i <= arraySize; ++i) {
-                        for(int j = 1; j <= arraySize; ++j){
-                                if(ar[i][j] != targetAr[i][j]) {
-                                        misplacedTiles++;
-                                }
-                        }
-                }
-                heuristicValue = numberOfMovesUsed + (float) misplacedTiles / (float) arraySize ;*/
+
                 for(int i = 1; i <= arraySize; ++i) {
                         for(int j = 1; j <= arraySize; ++j){
                                 if(ar[i][j] != targetAr[i][j]) {
                                         misplacedTiles++;
-                                        verticalDistance += Math.min(Math.abs(ar[i][j] - i) + 1, arraySize - Math.abs(ar[i][j] - i));
-                                        /*int temp = Math.abs(ar[i][j] - i) + 1;
-                                        verticalDistance += Math.min(temp, arraySize - temp + 1);*/
+                                        //verticalDistance += Math.min(Math.abs(ar[i][j] - i) + 1, arraySize - Math.abs(ar[i][j] - i));
+                                        int temp = Math.abs(ar[i][j] - i) + 1;
+                                        verticalDistance += Math.min(temp, arraySize - temp + 1);
                                 }
                         }
                 }
