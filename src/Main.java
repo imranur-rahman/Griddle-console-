@@ -59,6 +59,8 @@ public class Main {
 
                 while(priorityQueue.isEmpty() == false) {
 
+                        //System.out.println("priorityQueue " + priorityQueue.size());
+
                         now = priorityQueue.poll();
                         /*if(now.equals(goalState))
                                 break;*/
@@ -107,6 +109,7 @@ public class Main {
                         }
 
                         hashSet.add(now);
+                        //System.out.println("hashSet " + hashSet.size());
 
                         //Thread.sleep(1000);
                 }
